@@ -1,0 +1,35 @@
+directives
+  extienden la funcionalidad del html
+  se pueden definir por atributos como ng-model o ng-app
+    o como tags html nuevos que se definen
+
+  usar directives es como darle indicaciones a angular de
+   como se comportaran ciertos elmeentos html 
+
+expressions
+
+  {{These are expressions}}
+  they use the variables that angular holds up
+
+directive ng-repeat
+  para poder repetir elementos en base a los elementos de un arreglo por ejemplo
+
+modulos
+  defines en un archivo aparte los modulos
+  luego el html se pone que parte sera controlada por que modulo
+
+directive ng-include
+  para organizar el codigo
+
+directive ng-show
+  lo que sea verdadero lo mostrara,
+
+directive ng-hide
+  lo que sea verdadero lo escondera
+
+ng-submit
+  pra forms
+
+ng-src
+  para imagenes
+

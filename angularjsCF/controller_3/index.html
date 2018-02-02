@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MiApp">
+
+<head>
+  <title>Document</title>
+  <script src="../app/lib/angular.min.js"></script>
+  <script src="module.js"></script>
+  <script src="controller.js"></script>
+</head>
+
+<body>
+  <div ng-controller="MiControlador">
+    <h1>Comments</h1>
+
+    <input type="text" ng-model="newComment.username" placeholder="username" />
+    <br>
+    <input type="text" ng-model="newComment.comment" placeholder="comment" />
+    <br>
+    <button ng-click="addNewComment()">Add comment</button>
+
+    <ul>
+      <li ng-repeat="comment in comments"> user : {{comment.username}}, comment : {{comment.comment}}</li>
+    </ul>
+
+
+
+
+  </div>
+</body>
+
+</html>

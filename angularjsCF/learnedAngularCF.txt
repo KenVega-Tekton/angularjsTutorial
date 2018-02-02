@@ -1,0 +1,16 @@
+los controladores de segundo parametro reciben un arreglo porque asi
+ pueden minificar los archivos sin necesidad de que se rompa el framework
+
+algunos filtros pueden recibir parametros
+
+cuando no tienes ng-directives normalmente tendras que llamar a apply o digest.
+
+  digest busca por todos los watchers y verifica si sus valores cambiaron.
+
+  luego actualiza la vista en base a ello
+
+  un ejemplo clasico de donde esto sucede es cuando se usa setTimeout
+    
+    los valores que cambies en ese momento no cambiaran la vista a no ser que llames a apply
+    
+      *por cierto que en lugar de usar setTimeout podrias usar $timeOut()

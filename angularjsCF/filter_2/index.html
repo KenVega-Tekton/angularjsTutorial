@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainModule">
+
+<head>
+  <title>Filters</title>
+  <script src="../app/lib/angular.min.js"></script>
+  <script src="../app/lib/angular-localstorage.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <div ng-controller="FilterController">
+    <p>{{ mi_html | json }}</p>
+    <p>{{ costo | currency }}</p>
+  </div>
+</body>
+
+</html>

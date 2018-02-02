@@ -1,0 +1,25 @@
+ng-switch
+ ng-switch-when
+
+ng-href
+
+ng-submit
+
+ng-disabled
+
+
+ng-disabled="loginForm.$invalid"
+	<button type="submit" class="btn btn-primary pull-right" ng-disabled="sendForm.$invalid">Send Reset Token</button>
+
+
+onclick vs ng-click
+
+
+someController.$inject 
+
+angular
+ .module
+ .controller
+ .factory()
+
+
