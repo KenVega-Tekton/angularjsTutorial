@@ -14,3 +14,15 @@ cuando no tienes ng-directives normalmente tendras que llamar a apply o digest.
     los valores que cambies en ese momento no cambiaran la vista a no ser que llames a apply
     
       *por cierto que en lugar de usar setTimeout podrias usar $timeOut()
+
+usar watchers es mala practica (son mas dificiles de testear)
+
+--
+
+servicios se crean con factories
+  la idea es hacer la app mas modular a traves de servicios (como funciones generales para todas las aplicaciones)
+
+  los servicios devuelven una funcoin que al ifnal tiene mas funciones
+  
+  los servicios pueden requerir de mas servicios
+  

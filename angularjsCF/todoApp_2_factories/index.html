@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TodoList">
+
+<head>
+  <title>Todo App</title>
+  <script src="../app/lib/angular.min.js"></script>
+  <script src="../app/lib/angular-localstorage.min.js"></script>
+  <script src="app-watch.js"></script>
+</head>
+
+<body>
+  <div ng-controller="TodoController">
+    <ul>
+      <li ng-repeat="activ in activs">
+        {{activ.description}} - {{activ.date | date : 'short'}} -
+        <a ng-click="removeActv(activ)">Remove</a>
+      </li>
+    </ul>
+    <form ng-submit="addActiv()">
+      <input type="text" ng-model="newActiv.description">
+      <input type="datetime-local" ng-model="newActiv.date">
+      <input type="submit" value="Save todo">
+    </form>
+
+    <button ng-click="clean()">Clean</button>
+  </div>
+</body>
+
+</html>
