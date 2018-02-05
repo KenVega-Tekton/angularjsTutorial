@@ -1,0 +1,10 @@
+reglas a seguir para separar concerns
+
+- 1 componente, 1 archivo, 1 proposito
+
+- aprovecha al maximo las dependencias para poder delegar tareas
+
+- modulariza toda la aplicacion en base a las funcionalidades de la misma
+
+así reduces el riesgo de errores, haces mas mantenible el codigo
+mas facil testear el codigo, reusas mas el codigo

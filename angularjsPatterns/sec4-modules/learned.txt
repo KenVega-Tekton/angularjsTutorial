@@ -1,0 +1,27 @@
+los modulos encapsulan cierta funcionalidad de tu aplicacion
+entre ellas pueden tener
+
+  config + routes
+  filters
+  directives
+  factory + service + provider + value + constant
+  controller
+
+getter y setters
+
+  getter simplemente se refiere a que almacenes la informacion de un modulo en una variable
+  setter significa que puedes setear las dependencias a un modulo
+
+---
+
+3 categorias de modulos
+
+  1. angularjs modules
+    ng-animate
+    ng-route
+
+  2. modulos de 3ros
+    
+  3. custom modules
+    creamos estos
+    

@@ -1,0 +1,126 @@
+cuando la app crece, tienes mas controladores y servicios y modulos
+esta seccion enseña como organizar cuando la app crece
+
+ventajas de estructurar la app en angularjs
+
+ - desarrollo mas rapido
+ - alineamiento con al separacion de concerns
+ - más fácil de encontrar cierto código
+ - la transición a modularidad es más fácil cuando la app crece
+
+---
+
+sorting boxes
+ 
+  /app
+  /content
+  /scripts or /vendor or /components or /bower_components
+  /test
+
+by type or by feature?
+
+  by type 
+  /app
+    /controllers
+    /services
+    /views
+
+  +: funciona bien para apps pequeñas
+  -: cuando trabajas en una vista, trabajas en distintas carpetas
+
+  by feature
+  /app
+    /dashboard
+    /layout
+    /people
+    /services
+  
+  +: es mas facil aplicar la modularidad con este patron
+  +: funciona mejor con apps medianas-grandes
+  
+  la clave no es escoger una especificamente, sino ser consistente en tu decision
+
+---
+
+LIFT principle
+
+  Locate your code must be easy
+    cuan rapido puedes abrir todos los archivos para trabajar en un feature
+  Identify a single file at a glance
+    los nombres de los archivos indican bien que hacen
+  Flat structure as long as we can
+    muchas carpetas anidadas debe evitarse
+  Try to stay DRY
+    people-view.html --> people.html (ya se sabe que es una vista)
+
+  sus ejemplos van mas por el lado de controladores y factories
+  
+   cuando abres los archivos, puedes ver automaticamente lo siguiente
+    en controladores
+      ves rapidamente a que variables tiene acceso dentro de la vista
+      las implementaciones las separa con una linea de comentarios
+        pero no son necesarias verlas porque cuando trabajas en un feature normalmente
+          lo que se desea es ver las cosas con las que puedes trabajar con la vista
+
+          igual con los factories y services
+        
+---
+
+naming conventions
+
+  los modulos :
+
+    avengers.module.js
+  
+  los controladores: 
+
+    avenger.js ( porque ya dentro del archivo se ve que es controller por sintaxis, tambien porque en la vista se nota rapidamente que se usa un controller)
+
+---
+
+common starting structure
+
+  app/
+    app.js  -- main app module
+    config.js -- module configuration
+    dataservice.js -- data service
+    sessions.html -- view
+    sessions.js -- controller
+
+  cuando van creciendo el numero de archivos.. 
+    cuando se tiene mas de 7 por carpeta normalmente se crea una nueva
+
+  app
+    app.js
+    config.routes.js
+    directives.js
+    layout/
+      shell.html
+      shell.js
+      topnav.html
+      topnav.js
+    people/
+      attendees.html
+      attendees.js
+      speakers.html
+      speakers.js
+      speaker-detail.html
+      speaker-detail.js
+    sessions/
+      session-detail.html
+      session-detail.js
+      sessions.html
+      sessions.js
+    services/
+      dataservice.js
+      localstorage.js
+      logger.js
+      spinner.js
+
+      
+
+
+  
+
+
+  

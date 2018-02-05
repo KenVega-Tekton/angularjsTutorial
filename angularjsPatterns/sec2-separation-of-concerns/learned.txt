@@ -1,0 +1,130 @@
+ng-demos
+ modular
+  base para entender patrones
+ cc-bmean
+  app mas completa que sigue los patrones
+
+node packages
+
+ npm install -g bower gulp karma-cli nodemon
+
+dentro de modular
+ npm install
+
+ gulp serve-dev
+
+puerto 7200
+
+archivo importante
+ src/client/app/dashboard/dashboard.html
+
+why patterns
+ cuando te piden un nuevo feature
+  cuanto codigo tienes que cambiar?
+  cuand rapido puede hacerse
+  cuan riesgosos son los cambios?
+
+soc - separations of concerns
+ facil de mantener
+ facil de extender
+ reusar mas codigo
+ mas facil de testear
+ mas facil reparar
+
+los controladores solo deberian controlar la logica de la vista
+ no lo siguiente
+  logging
+  get data via xhr call
+  broadcast messages
+  pagination logic
+  building models
+  opens dialogs
+
+la regla 1 apartir de eso
+ 
+ 1 componente tiene solo 1 rol
+ 1 componente por archivo
+ 1 componente tiene un proposito singular
+
+2.4
+ muestra diferencias de concerns en codigo
+
+ un solo archivo solo cumple un proposito porque todas las demas cosas que necesita las trae como dependencias de otros archivos
+  y entonces puede preocuparse un controlador solo de la vista
+
+ luego muestra codigo spagethi
+  ahi hace la llamada a varias dependencias de angular $http $q
+   y se nota que el controlador ya se preocupa mas de una cosa
+    de manejar lla vista y saber de donde y como viene la data
+
+
+2.7
+ tips para separar codigo
+  regla de 1
+   tu componente realmente tiene un solo proposito o realiza algo mas que podria ser reusado por otros?
+
+   ejemplo
+  
+    function avengers($http, $log) {
+      var vm = this;
+      vm.avengers = [];
+
+      function getAvengers() {
+        return $http.get("/api/maa").then(
+          function(data, status, headers, config) {
+            vm.avengers = data.data[0].data.results;
+            return vm.avengers;
+          },
+          function(error) {
+            toastr.error(error, title);
+            $log.error("Error: " + error);
+          }
+        );
+      }
+    }
+
+    1. el get a '/api/maa' seguro lo hara otro controlador tambien
+    2. la forma en como se loguea el error podria ser reusable
+
+  como podria ponerse
+   
+    function avengers(avengersData) {
+      var vm = this;
+      vm.avengers = [];
+
+      function getAvengers() {
+        avengersData.getAvengers().then(function(data) {
+          vm.avengers = data;
+          return vm.avengers;
+        });
+      }
+    }
+
+    1. aqui el controlador delega la tarea de hacer get a '/api/maa' a una dependencia. esta tambien se encarga de controlar los errores 
+    2. ahora el controlador solo se encarga de la logica de la presentacion 
+
+    como quedaria el servicio que se usa de dependencia en ese controlador
+    
+
+ otra cosa es separar la aplicacion por modulos y servicios comunes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
