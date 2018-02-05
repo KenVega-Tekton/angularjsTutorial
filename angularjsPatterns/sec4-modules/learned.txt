@@ -24,4 +24,61 @@ getter y setters
     
   3. custom modules
     creamos estos
-    
+
+---
+
+dependency chains
+
+  widgets - contiene reusable directives que utilizan los componentes principales de la app
+  core - informacion, $http , configs, ngRoutes, custom modules, etc
+
+---
+
+evaluando estrategias de dependencias
+
+  cada modulo puede explicitamente indicar de cuales otros modulos depende. pero a la larga en una aplicacion grande se hace dificil de mantener
+
+  lo que se hace es definir las dependencias por niveles de modo que tienes:
+
+  - main app modules
+
+    angular.module('app', [
+      'app.core',
+      'app.widgets',
+
+      //feature areas
+      
+      'app.avengers',
+      'app.dashboard',
+      'app.layout'
+    ]);
+
+  - cross app modules
+
+    angular.module('app.core', [
+      // angular modules
+      'ngAnimate',
+      'ngRoute',
+      'ngSanitize',
+
+      //resuable cross app code modules
+      'blocks.exception',
+      'blocks.logger',
+      'blocks.router',
+
+      //3rd party modules
+      'ngplus'
+    ]);
+
+  - app feature modules
+
+    angular.module('app.avengers', []);
+
+  ***
+    core se vuelve el modulo que puedes reutilizar para varias aplicaciones. se vuelve el modulo más grande
+
+    sin embargo da la ventaja de que los modulos de features se vuelven mucho mas faciles de codear y definir (ya no tienen que poner todas las dependencias puesto que todas ya las incluye core)
+
+    el main module solo está allí para unir todos los demas
+  ***
+
