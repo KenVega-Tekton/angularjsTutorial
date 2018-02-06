@@ -1,0 +1,6 @@
+
+    que es hoisting(?)
+
+    que es la funcion activate()
+
+    todos los controladores estan en IIFEs solo para evitar problemas de scope? 

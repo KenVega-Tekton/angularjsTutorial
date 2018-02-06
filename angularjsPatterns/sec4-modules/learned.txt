@@ -80,5 +80,8 @@ evaluando estrategias de dependencias
     sin embargo da la ventaja de que los modulos de features se vuelven mucho mas faciles de codear y definir (ya no tienen que poner todas las dependencias puesto que todas ya las incluye core)
 
     el main module solo está allí para unir todos los demas
+      si pones dependencias en un feature (digamos dashboard)
+      esas dependencias no tienes que agregarlas al modulo dashboard, sino a app.module
+        así siguen manteniendose los modulos de los features cortos. 
   ***
 

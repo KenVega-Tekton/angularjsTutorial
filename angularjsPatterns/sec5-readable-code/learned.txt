@@ -1,0 +1,64 @@
+chaining
+
+hoisting
+
+anonymous functions
+
+named functions
+
+global variables
+
+extending modules
+
+IIFE
+
+
+----
+
+  como escribir los controladores para que puedan leerse mejor
+
+    (function() {
+    'use strict';
+
+    angular
+        .module('app.session')
+        .controller('SessionDetail', SessionDetail);
+
+    SessionDetail.$inject = [
+        '$location', '$scope', '$routeParams', '$window',
+        'bootstrap.dialog', 'common', 'config', 'datacontext', 'model'
+    ];
+
+    function SessionDetail(
+        $location, $scope, $routeParams, $window,
+        bsDialog, common, config, datacontext, model) {
+        /*jshint validthis: true */
+        var vm = this;
+        var entityName = model.entityNames.session;
+        var logger = common.logger;
+        ...
+
+    en la parte del controlador , se llama a SessionDetail que se separa por 2 partes para inyectar las dependencias y luego los parametros en la funcion. eso es más fácil de leer      
+---
+
+IIFE
+
+  ayudan bastante a separar el scope de las variables porque en un IIFE no se afecta el scope externo.
+
+---
+
+modos de codear el controllador
+
+  register and inject, then function (la mas conocida e usada. funciona para apps pequeñas)
+
+  function, inject, register (funciones primero, registro de app al final. algo raro)
+
+  register, inject, function (para mi esta es mejor porque es mas leible a la larga)
+
+---
+
+  la idea es exponer la interface del modulo o controlador o servicio o factory que se tenga en un archivo, lo mas rapido que se pueda en el archivo. de modo que quien revise el codigo sepa como puede trabajar con ello
+
+  luego de eso en cada archivo recien se puede preocupar de las implementaciones de las funciones
+
+---

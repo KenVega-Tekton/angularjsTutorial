@@ -1,0 +1,7 @@
+los modulos ayudan al procesos de separacion de concerns
+
+cada modulo puede representarse como un feature de la  aplicaicon
+
+se trata de no crear cadenas de dependencias entre modulos.
+  mejor por eso es tener todo en app.module y app.core
+

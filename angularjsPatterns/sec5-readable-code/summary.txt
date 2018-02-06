@@ -1,0 +1,9 @@
+IIFEs ayudan con el problema de variables globales
+
+Chaining ayuda con el problema de variables globales innecesarias
+
+Named functions ayuda con la facilidad de lectura
+
+El codigo importante (las interfaces del modulo o factory) deberian estar siempre al inicio de cada archivo
+
+*puedes hacer inyecciones de dependencias con gulp también /* ngAnnotate */

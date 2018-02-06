@@ -1,0 +1,72 @@
+que se aprendera
+
+  el rol de un controller
+
+  classic vs new
+
+  why dots matter
+
+  nesting controllers
+
+  linkear el controlador con la vista y las rutas
+
+  $scope : que hace
+
+  Route resolvers
+
+  unit testing 
+
+----
+
+controllers
+  al final de cuentas, son como las funciones constructoras en javascript
+  así que instancias una objeto controlador
+
+  tienen 2 formas de definirse  
+    "classic" : que lleva dentro el $scope
+
+    "controller As" : que lleva el keyword this : var vm = this;
+
+  igual ambos construyen una nueva instancia de controlador
+
+  otros features de $scope  
+    $apply, $digest, $watch, $broadcast, $destroy, $emit, $eval,
+    $evalSync, $id, $new, $on, $parent, $root, $watchCollection
+
+---
+
+dots
+
+  son utiles cuando se utiliza nesting en controladores 
+    
+    un ejemplo practico es cuando tienes variables con el mismo nombre en distintos controladores
+
+    evitas $parent.$parent chaining
+
+
+controller as syntax  
+  cuando los declaras en el html se ponen como 
+
+  <div ng-controller="Shell as vm">
+    ... vm.title
+  </div>
+
+  esto te permite nestear controladores sin problemas
+
+  tambien puedes
+
+    <div ng-controller="Shell as shell">
+      ... shell.title
+    </div>
+
+  tambien puedes evitar poner el controlador as. E igual sigue funcionando
+
+    04-scope.fake
+
+---
+
+las rutas tambien pueden activar los controladores en su configuracion
+
+
+
+  
